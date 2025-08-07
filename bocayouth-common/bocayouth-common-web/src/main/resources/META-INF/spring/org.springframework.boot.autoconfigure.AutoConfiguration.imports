@@ -1,0 +1,5 @@
+priv.bocayouth.common.web.config.CaptchaConfig
+priv.bocayouth.common.web.config.FilterConfig
+priv.bocayouth.common.web.config.I18nConfig
+priv.bocayouth.common.web.config.ResourcesConfig
+priv.bocayouth.common.web.config.UndertowConfig

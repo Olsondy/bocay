@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>priv.bocayouth</groupId>
+        <artifactId>bocayouth</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>bocayouth-business</artifactId>
+    <packaging>pom</packaging>
+
+    <name>bocayouth-business</name>
+    <modules>
+        <module>bocayouth-dilano</module>
+    </modules>
+
+</project>

@@ -1,0 +1,3 @@
+priv.bocayouth.common.security.config.SaTokenConfig
+priv.bocayouth.common.security.handler.AllUrlHandler
+priv.bocayouth.common.security.config.SecurityConfig

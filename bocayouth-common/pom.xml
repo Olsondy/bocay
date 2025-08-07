@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>bocayouth</artifactId>
+    <groupId>priv.bocayouth</groupId>
+    <version>${revision}</version>
+  </parent>
+  <artifactId>bocayouth-common</artifactId>
+  <packaging>pom</packaging>
+
+  <description>
+    common 通用模块
+  </description>
+  <modules>
+    <module>bocayouth-common-bom</module>
+    <module>bocayouth-common-core</module>
+    <module>bocayouth-common-redis</module>
+    <module>bocayouth-common-sms</module>
+    <module>bocayouth-common-security</module>
+    <module>bocayouth-common-tenant</module>
+    <module>bocayouth-common-web</module>
+      <module>bocayouth-common-message</module>
+  </modules>
+</project>
