@@ -376,7 +376,7 @@ public class ExcelUtil {
      * 解析导出值 0=男,1=女,2=未知
      *
      * @param propertyValue 参数值
-     * @param converterExp  翻译注解
+     * @param converterExp  转换注解
      * @param separator     分隔符
      * @return 解析后值
      */
@@ -405,7 +405,7 @@ public class ExcelUtil {
      * 反向解析值 男=0,女=1,未知=2
      *
      * @param propertyValue 参数值
-     * @param converterExp  翻译注解
+     * @param converterExp  转换注解
      * @param separator     分隔符
      * @return 解析后值
      */

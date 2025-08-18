@@ -1,3 +1,5 @@
-priv.bocayouth.common.security.config.SaTokenConfig
 priv.bocayouth.common.security.handler.AllUrlHandler
+priv.bocayouth.common.security.config.CaptchaConfig
+priv.bocayouth.common.security.config.FilterConfig
 priv.bocayouth.common.security.config.SecurityConfig
+priv.bocayouth.common.security.config.SaTokenConfig

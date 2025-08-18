@@ -2,7 +2,7 @@ package priv.bocayouth.common.core.utils.regex;
 
 import cn.hutool.core.exceptions.ValidateException;
 import cn.hutool.core.lang.Validator;
-import priv.bocayouth.common.core.factory.RegexPatternPoolFactory;
+import priv.bocayouth.common.core.feat.factory.RegexPatternPoolFactory;
 
 import java.util.regex.Pattern;
 

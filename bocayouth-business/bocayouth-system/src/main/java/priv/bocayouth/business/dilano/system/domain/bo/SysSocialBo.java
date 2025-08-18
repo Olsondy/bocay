@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import priv.bocayouth.common.core.validate.AddGroup;
 import priv.bocayouth.common.core.validate.EditGroup;
-import priv.bocayouth.common.tenant.core.TenantEntity;
+import priv.bocayouth.common.base.domain.entity.TenantEntity;
 import priv.bocayouth.business.dilano.system.domain.SysSocial;
 
 /**

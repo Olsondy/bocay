@@ -7,9 +7,9 @@ import cn.dev33.satoken.stp.StpLogic;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
-import priv.bocayouth.common.core.factory.YmlPropertySourceFactory;
-import priv.bocayouth.common.security.core.dao.PlusSaTokenDao;
-import priv.bocayouth.common.security.core.service.SaPermissionImpl;
+import priv.bocayouth.common.core.feat.factory.YmlPropertySourceFactory;
+import priv.bocayouth.common.security.feat.dao.PlusSaTokenDao;
+import priv.bocayouth.common.security.feat.service.SaPermissionImpl;
 import priv.bocayouth.common.security.handler.SaTokenExceptionHandler;
 
 /**

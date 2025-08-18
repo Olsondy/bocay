@@ -8,7 +8,7 @@ import priv.bocayouth.common.core.domain.R;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.core.annotation.Log;
 import priv.bocayouth.common.core.enums.BusinessType;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.business.dilano.system.domain.bo.SysDeptBo;
 import priv.bocayouth.business.dilano.system.domain.vo.SysDeptVo;
 import priv.bocayouth.business.dilano.system.service.ISysDeptService;

@@ -12,7 +12,7 @@ import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.core.annotation.Log;
 import priv.bocayouth.common.core.enums.BusinessType;
 import priv.bocayouth.common.core.helper.LoginHelper;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.business.dilano.system.domain.SysMenu;
 import priv.bocayouth.business.dilano.system.domain.bo.SysMenuBo;
 import priv.bocayouth.business.dilano.system.domain.vo.RouterVo;

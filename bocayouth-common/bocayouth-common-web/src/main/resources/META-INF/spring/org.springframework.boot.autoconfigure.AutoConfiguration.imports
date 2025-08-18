@@ -1,7 +1,0 @@
-priv.bocayouth.common.web.config.CaptchaConfig
-priv.bocayouth.common.web.config.FilterConfig
-priv.bocayouth.common.web.config.TranslationConfig
-priv.bocayouth.common.web.feat.service.impl.DeptNameTranslationImpl
-priv.bocayouth.common.web.feat.service.impl.DictTypeTranslationImpl
-priv.bocayouth.common.web.feat.service.impl.UserNameTranslationImpl
-priv.bocayouth.common.web.feat.service.impl.NicknameTranslationImpl

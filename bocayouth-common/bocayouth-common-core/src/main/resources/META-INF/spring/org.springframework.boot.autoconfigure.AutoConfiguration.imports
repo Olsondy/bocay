@@ -7,7 +7,6 @@ priv.bocayouth.common.core.config.HttpToolAutoConfig
 priv.bocayouth.common.core.config.I18nConfig
 priv.bocayouth.common.core.config.JacksonConfig
 priv.bocayouth.common.core.config.MybatisPlusConfig
-priv.bocayouth.common.core.config.MailConfig
 priv.bocayouth.common.core.config.ResourcesConfig
 priv.bocayouth.common.core.config.SpringDocConfig
 priv.bocayouth.common.core.config.ThreadPoolConfig

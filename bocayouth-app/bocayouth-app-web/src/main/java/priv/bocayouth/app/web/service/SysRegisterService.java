@@ -21,8 +21,8 @@ import priv.bocayouth.common.core.utils.ServletUtils;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.tenant.helper.TenantHelper;
-import priv.bocayouth.common.web.config.properties.CaptchaProperties;
+import priv.bocayouth.common.base.feat.helper.TenantHelper;
+import priv.bocayouth.common.security.config.properties.CaptchaProperties;
 
 /**
  * 注册校验方法

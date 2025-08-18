@@ -29,11 +29,6 @@
             <artifactId>bocayouth-common-redis</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-web</artifactId>
-        </dependency>
-
         <!--velocity代码生成使用模板 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>

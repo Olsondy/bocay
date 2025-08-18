@@ -5,7 +5,7 @@ import cn.hutool.core.util.ArrayUtil;
 import org.springframework.stereotype.Service;
 import priv.bocayouth.common.core.feat.sensitive.SensitiveService;
 import priv.bocayouth.common.core.helper.LoginHelper;
-import priv.bocayouth.common.tenant.helper.TenantHelper;
+import priv.bocayouth.common.base.feat.helper.TenantHelper;
 
 /**
  * 脱敏服务

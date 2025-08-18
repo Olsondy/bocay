@@ -21,7 +21,7 @@ public class I18nUtils {
      *
      * @param code 消息键
      * @param args 参数
-     * @return 获取国际化翻译值
+     * @return 获取国际化转换值
      */
     public static String message(String code, Object... args) {
         try {

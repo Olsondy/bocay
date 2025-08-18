@@ -16,7 +16,7 @@ import priv.bocayouth.common.core.enums.BusinessType;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
 import priv.bocayouth.common.excel.utils.ExcelUtil;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 
 import java.util.ArrayList;
 import java.util.List;

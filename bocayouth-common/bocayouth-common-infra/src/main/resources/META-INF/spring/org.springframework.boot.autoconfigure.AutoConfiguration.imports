@@ -1,0 +1,3 @@
+priv.bocayouth.common.infra.config.MailConfig
+priv.bocayouth.common.infra.config.SmsAutoConfiguration
+priv.bocayouth.common.infra.config.SseAutoConfiguration

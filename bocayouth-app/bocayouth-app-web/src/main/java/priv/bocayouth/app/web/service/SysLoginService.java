@@ -27,8 +27,8 @@ import priv.bocayouth.common.core.helper.DataPermissionHelper;
 import priv.bocayouth.common.core.helper.LoginHelper;
 import priv.bocayouth.common.core.utils.*;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.tenant.exception.TenantException;
-import priv.bocayouth.common.tenant.helper.TenantHelper;
+import priv.bocayouth.common.base.exception.TenantException;
+import priv.bocayouth.common.base.feat.helper.TenantHelper;
 
 import java.time.Duration;
 import java.util.Date;

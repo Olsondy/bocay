@@ -17,7 +17,7 @@ import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.constant.TenantConstants;
 import priv.bocayouth.common.core.domain.model.LoginUser;
 import priv.bocayouth.common.core.exception.ServiceException;
-import priv.bocayouth.common.core.feat.core.RoleService;
+import priv.bocayouth.common.core.feat.service.RoleService;
 import priv.bocayouth.common.core.utils.MapstructUtils;
 import priv.bocayouth.common.core.utils.StreamUtils;
 import priv.bocayouth.common.core.utils.StringUtils;

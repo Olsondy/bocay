@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.exception.ServiceException;
-import priv.bocayouth.common.core.feat.core.PostService;
+import priv.bocayouth.common.core.feat.service.PostService;
 import priv.bocayouth.common.core.utils.MapstructUtils;
 import priv.bocayouth.common.core.utils.StreamUtils;
 import priv.bocayouth.common.core.utils.StringUtils;

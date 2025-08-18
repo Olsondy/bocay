@@ -2,7 +2,7 @@ package priv.bocayouth.common.core.validate.dicts;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import priv.bocayouth.common.core.feat.core.DictService;
+import priv.bocayouth.common.core.feat.service.DictService;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 

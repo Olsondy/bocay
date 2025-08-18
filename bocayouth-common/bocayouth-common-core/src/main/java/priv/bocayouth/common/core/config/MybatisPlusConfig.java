@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import priv.bocayouth.common.core.aspectj.DataPermissionAspect;
-import priv.bocayouth.common.core.factory.YmlPropertySourceFactory;
+import priv.bocayouth.common.core.feat.factory.YmlPropertySourceFactory;
 import priv.bocayouth.common.core.handler.InjectionMetaObjectHandler;
 import priv.bocayouth.common.core.handler.MybatisExceptionHandler;
 import priv.bocayouth.common.core.handler.PlusPostInitTableInfoHandler;

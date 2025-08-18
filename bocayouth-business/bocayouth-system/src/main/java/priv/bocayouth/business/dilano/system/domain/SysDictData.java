@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import priv.bocayouth.common.core.constant.SystemConstants;
-import priv.bocayouth.common.tenant.core.TenantEntity;
+import priv.bocayouth.common.base.domain.entity.TenantEntity;
 
 /**
  * 字典数据表 sys_dict_data

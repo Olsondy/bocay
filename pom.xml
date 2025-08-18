@@ -34,6 +34,8 @@
 		<bouncycastle.version>1.80</bouncycastle.version>
 		<!-- 离线IP地址定位库 -->
 		<ip2region.version>2.7.0</ip2region.version>
+        <!-- OSS 配置 -->
+        <aws.sdk.version>2.28.22</aws.sdk.version>
 		<velocity.version>2.3</velocity.version>
 		<!-- 面向运行时的D-ORM依赖 -->
 		<anyline.version>8.7.2-20250603</anyline.version>
@@ -54,7 +56,8 @@
 		<module>bocayouth-common</module>
         <module>bocayouth-business</module>
         <module>bocayouth-features</module>
-	</modules>
+        <module>bocayouth-starters</module>
+    </modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -79,7 +82,7 @@
 			<!-- common 的依赖配置-->
 			<dependency>
 				<groupId>priv.bocayouth</groupId>
-				<artifactId>bocayouth-common-bom</artifactId>
+				<artifactId>bocayouth-starters</artifactId>
 				<version>${revision}</version>
 				<type>pom</type>
 				<scope>import</scope>
@@ -125,6 +128,7 @@
 				<artifactId>sa-token-core</artifactId>
 				<version>${satoken.version}</version>
 			</dependency>
+            <!-- mybatis 相关    -->
 			<dependency>
 				<groupId>com.baomidou</groupId>
 				<artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
@@ -154,7 +158,24 @@
 				<artifactId>p6spy</artifactId>
 				<version>${p6spy.version}</version>
 			</dependency>
-
+            <!--  AWS SDK for Java 2.x  -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3</artifactId>
+                <version>${aws.sdk.version}</version>
+            </dependency>
+            <!-- 基于 AWS CRT 的 S3 客户端的性能增强的 S3 传输管理器 -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3-transfer-manager</artifactId>
+                <version>${aws.sdk.version}</version>
+            </dependency>
+            <!-- 将基于 Netty 的 HTTP 客户端从类路径中移除 -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>netty-nio-client</artifactId>
+                <version>${aws.sdk.version}</version>
+            </dependency>
 			<!--velocity代码生成使用模板 -->
 			<dependency>
 				<groupId>org.apache.velocity</groupId>

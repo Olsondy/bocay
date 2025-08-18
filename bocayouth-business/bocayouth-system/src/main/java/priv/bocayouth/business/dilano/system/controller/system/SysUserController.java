@@ -35,7 +35,7 @@ import priv.bocayouth.common.core.utils.StreamUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.excel.feat.ExcelResult;
 import priv.bocayouth.common.excel.utils.ExcelUtil;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 
 import java.util.ArrayList;
 import java.util.List;

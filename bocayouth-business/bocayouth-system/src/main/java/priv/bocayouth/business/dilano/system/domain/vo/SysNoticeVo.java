@@ -2,8 +2,8 @@ package priv.bocayouth.business.dilano.system.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
-import priv.bocayouth.common.web.annotation.Translation;
-import priv.bocayouth.common.web.constant.TransConstant;
+import priv.bocayouth.common.base.annotation.Conversion;
+import priv.bocayouth.common.base.constant.ConversionConstant;
 import priv.bocayouth.business.dilano.system.domain.SysNotice;
 
 import java.io.Serial;
@@ -62,7 +62,7 @@ public class SysNoticeVo implements Serializable {
     /**
      * 创建人名称
      */
-    @Translation(type = TransConstant.USER_ID_TO_NAME, mapper = "createBy")
+    @Conversion(type = ConversionConstant.USER_ID_TO_NAME, mapper = "createBy")
     private String createByName;
 
     /**

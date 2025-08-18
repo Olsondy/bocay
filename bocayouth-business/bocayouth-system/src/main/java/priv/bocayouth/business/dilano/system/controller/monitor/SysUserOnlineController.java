@@ -15,7 +15,7 @@ import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
 import priv.bocayouth.common.core.utils.StreamUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.business.dilano.system.domain.SysUserOnline;
 
 import java.util.ArrayList;

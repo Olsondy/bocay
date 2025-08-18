@@ -19,7 +19,7 @@ import priv.bocayouth.common.core.validate.AddGroup;
 import priv.bocayouth.common.core.validate.EditGroup;
 import priv.bocayouth.common.excel.utils.ExcelUtil;
 import priv.bocayouth.common.redis.annotation.RepeatSubmit;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 
 import java.util.List;
 

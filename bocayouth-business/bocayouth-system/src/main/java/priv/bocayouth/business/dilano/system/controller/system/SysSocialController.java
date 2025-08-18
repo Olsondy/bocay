@@ -3,7 +3,7 @@ package priv.bocayouth.business.dilano.system.controller.system;
 import lombok.RequiredArgsConstructor;
 import priv.bocayouth.common.core.domain.R;
 import priv.bocayouth.common.core.helper.LoginHelper;
-import priv.bocayouth.common.web.feat.controller.BaseController;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.business.dilano.system.domain.vo.SysSocialVo;
 import priv.bocayouth.business.dilano.system.service.ISysSocialService;
 import org.springframework.validation.annotation.Validated;

@@ -14,7 +14,7 @@ import priv.bocayouth.common.core.constant.CacheNames;
 import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.domain.dto.DeptDTO;
 import priv.bocayouth.common.core.exception.ServiceException;
-import priv.bocayouth.common.core.feat.core.DeptService;
+import priv.bocayouth.common.core.feat.service.DeptService;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
 import priv.bocayouth.common.core.helper.DataBaseHelper;

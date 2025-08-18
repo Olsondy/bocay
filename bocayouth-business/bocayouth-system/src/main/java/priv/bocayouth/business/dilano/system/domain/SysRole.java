@@ -3,7 +3,7 @@ package priv.bocayouth.business.dilano.system.domain;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
-import priv.bocayouth.common.tenant.core.TenantEntity;
+import priv.bocayouth.common.base.domain.entity.TenantEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

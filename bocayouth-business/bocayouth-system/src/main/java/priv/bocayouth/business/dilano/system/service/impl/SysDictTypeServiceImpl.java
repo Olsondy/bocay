@@ -12,7 +12,7 @@ import priv.bocayouth.common.core.constant.CacheNames;
 import priv.bocayouth.common.core.domain.dto.DictDataDTO;
 import priv.bocayouth.common.core.domain.dto.DictTypeDTO;
 import priv.bocayouth.common.core.exception.ServiceException;
-import priv.bocayouth.common.core.feat.core.DictService;
+import priv.bocayouth.common.core.feat.service.DictService;
 import priv.bocayouth.common.core.utils.MapstructUtils;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StreamUtils;

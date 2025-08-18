@@ -28,7 +28,7 @@ import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.core.utils.ValidatorUtils;
 import priv.bocayouth.common.core.utils.jackson.JsonUtils;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.tenant.helper.TenantHelper;
+import priv.bocayouth.common.base.feat.helper.TenantHelper;
 
 /**
  * 短信认证策略

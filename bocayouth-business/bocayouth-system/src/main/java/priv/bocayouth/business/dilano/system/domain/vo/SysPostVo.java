@@ -7,8 +7,8 @@ import lombok.Data;
 import priv.bocayouth.business.dilano.system.domain.SysPost;
 import priv.bocayouth.common.excel.annotation.ExcelDictFormat;
 import priv.bocayouth.common.excel.convert.ExcelDictConvert;
-import priv.bocayouth.common.web.annotation.Translation;
-import priv.bocayouth.common.web.constant.TransConstant;
+import priv.bocayouth.common.base.annotation.Conversion;
+import priv.bocayouth.common.base.constant.ConversionConstant;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -85,7 +85,7 @@ public class SysPostVo implements Serializable {
     /**
      * 部门名
      */
-    @Translation(type = TransConstant.DEPT_ID_TO_NAME, mapper = "deptId")
+    @Conversion(type = ConversionConstant.DEPT_ID_TO_NAME, mapper = "deptId")
     private String deptName;
 
 }

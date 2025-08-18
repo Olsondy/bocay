@@ -19,6 +19,10 @@
     <dependencies>
         <dependency>
             <groupId>priv.bocayouth</groupId>
+            <artifactId>bocayouth-common-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-core</artifactId>
         </dependency>
         <dependency>
@@ -27,24 +31,11 @@
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-message</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-sms</artifactId>
+            <artifactId>bocayouth-common-infra</artifactId>
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-security</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-tenant</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-web</artifactId>
         </dependency>
     </dependencies>
 </project>

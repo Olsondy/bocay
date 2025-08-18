@@ -18,7 +18,7 @@ import priv.bocayouth.common.core.utils.ip.AddressUtils;
 import priv.bocayouth.common.core.feat.log.LogininforEvent;
 import priv.bocayouth.common.redis.utils.RedisUtils;
 import priv.bocayouth.common.core.helper.LoginHelper;
-import priv.bocayouth.common.tenant.helper.TenantHelper;
+import priv.bocayouth.common.base.feat.helper.TenantHelper;
 import priv.bocayouth.app.web.service.SysLoginService;
 import org.springframework.stereotype.Component;
 

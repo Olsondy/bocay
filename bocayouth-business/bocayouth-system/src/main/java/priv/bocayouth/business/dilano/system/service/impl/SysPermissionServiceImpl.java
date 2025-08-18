@@ -2,7 +2,7 @@ package priv.bocayouth.business.dilano.system.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import priv.bocayouth.common.core.constant.TenantConstants;
-import priv.bocayouth.common.core.feat.core.PermissionService;
+import priv.bocayouth.common.core.feat.service.PermissionService;
 import priv.bocayouth.common.core.helper.LoginHelper;
 import priv.bocayouth.business.dilano.system.service.ISysMenuService;
 import priv.bocayouth.business.dilano.system.service.ISysPermissionService;

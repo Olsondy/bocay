@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.domain.dto.TaskAssigneeDTO;
 import priv.bocayouth.common.core.domain.model.TaskAssigneeBody;
-import priv.bocayouth.common.core.feat.core.TaskAssigneeService;
+import priv.bocayouth.common.core.feat.service.TaskAssigneeService;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
 import priv.bocayouth.business.dilano.system.domain.bo.SysDeptBo;

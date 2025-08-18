@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import priv.bocayouth.common.core.constant.SystemConstants;
-import priv.bocayouth.common.tenant.core.TenantEntity;
+import priv.bocayouth.common.base.domain.entity.TenantEntity;
 
 import java.util.Date;
 

@@ -25,7 +25,7 @@ import priv.bocayouth.common.core.domain.dto.UserDTO;
 import priv.bocayouth.common.core.exception.ServiceException;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
-import priv.bocayouth.common.core.feat.core.UserService;
+import priv.bocayouth.common.core.feat.service.UserService;
 import priv.bocayouth.common.core.helper.LoginHelper;
 import priv.bocayouth.common.core.utils.*;
 import priv.bocayouth.business.dilano.system.domain.bo.SysUserBo;

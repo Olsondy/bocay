@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import priv.bocayouth.common.tenant.core.TenantEntity;
+import priv.bocayouth.common.base.domain.entity.TenantEntity;
 
 import java.io.Serial;
 

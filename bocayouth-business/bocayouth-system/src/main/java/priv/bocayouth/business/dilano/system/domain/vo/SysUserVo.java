@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
 import priv.bocayouth.common.core.annotation.Sensitive;
-import priv.bocayouth.common.web.annotation.Translation;
-import priv.bocayouth.common.web.constant.TransConstant;
+import priv.bocayouth.common.base.annotation.Conversion;
+import priv.bocayouth.common.base.constant.ConversionConstant;
 import priv.bocayouth.common.core.enums.SensitiveStrategy;
 import priv.bocayouth.business.dilano.system.domain.SysUser;
 
@@ -78,7 +78,7 @@ public class SysUserVo implements Serializable {
     /**
      * 头像地址
      */
-    @Translation(type = TransConstant.OSS_ID_TO_URL)
+    @Conversion(type = ConversionConstant.OSS_ID_TO_URL)
     private Long avatar;
 
     /**
@@ -116,7 +116,7 @@ public class SysUserVo implements Serializable {
     /**
      * 部门名
      */
-    @Translation(type = TransConstant.DEPT_ID_TO_NAME, mapper = "deptId")
+    @Conversion(type = ConversionConstant.DEPT_ID_TO_NAME, mapper = "deptId")
     private String deptName;
 
     /**
