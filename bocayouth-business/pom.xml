@@ -12,7 +12,7 @@
 
     <name>bocayouth-business</name>
     <modules>
-        <module>bocayouth-dilano</module>
+        <module>bocayouth-system</module>
     </modules>
 
 </project>

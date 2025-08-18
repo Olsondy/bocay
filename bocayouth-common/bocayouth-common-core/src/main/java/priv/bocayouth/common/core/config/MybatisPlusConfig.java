@@ -19,7 +19,7 @@ import priv.bocayouth.common.core.factory.YmlPropertySourceFactory;
 import priv.bocayouth.common.core.handler.InjectionMetaObjectHandler;
 import priv.bocayouth.common.core.handler.MybatisExceptionHandler;
 import priv.bocayouth.common.core.handler.PlusPostInitTableInfoHandler;
-import priv.bocayouth.common.core.interceptor.PlusDataPermissionInterceptor;
+import priv.bocayouth.common.core.interceptor.DataPermissionInterceptor;
 import priv.bocayouth.common.core.utils.SpringUtils;
 
 /**
@@ -53,8 +53,8 @@ public class MybatisPlusConfig {
     /**
      * 数据权限拦截器
      */
-    public PlusDataPermissionInterceptor dataPermissionInterceptor() {
-        return new PlusDataPermissionInterceptor(SpringUtils.getProperty("mybatis-plus.mapperPackage"));
+    public DataPermissionInterceptor dataPermissionInterceptor() {
+        return new DataPermissionInterceptor(SpringUtils.getProperty("mybatis-plus.mapperPackage"));
     }
 
     /**

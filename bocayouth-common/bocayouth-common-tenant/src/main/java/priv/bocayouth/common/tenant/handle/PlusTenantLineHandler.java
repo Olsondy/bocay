@@ -9,7 +9,7 @@ import net.sf.jsqlparser.expression.NullValue;
 import net.sf.jsqlparser.expression.StringValue;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.tenant.helper.TenantHelper;
-import priv.bocayouth.common.tenant.properties.TenantProperties;
+import priv.bocayouth.common.tenant.config.properties.TenantProperties;
 
 import java.util.List;
 

@@ -25,7 +25,17 @@
             </dependency>
             <dependency>
                 <groupId>priv.bocayouth</groupId>
+                <artifactId>bocayouth-common-excel</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>priv.bocayouth</groupId>
                 <artifactId>bocayouth-common-message</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>priv.bocayouth</groupId>
+                <artifactId>bocayouth-common-mobile</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>

@@ -1,0 +1,8 @@
+wechat:
+  domain: https://api.weixin.qq.com
+  appid: wx345ec15dd56c0c1b
+  appSecret: 419bf5cd02294ba48bff9243272b1259
+  offid: 1724462933
+  sandBoxkey: hzMfdB4bVMVdDpGdGXTFmSddVVW60wye
+  url-address:
+    code2login: /sns/jscode2session

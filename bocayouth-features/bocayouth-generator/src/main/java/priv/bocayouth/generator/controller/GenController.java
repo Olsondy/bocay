@@ -13,7 +13,7 @@ import priv.bocayouth.common.core.enums.BusinessType;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
 import priv.bocayouth.common.core.helper.DataBaseHelper;
-import priv.bocayouth.common.web.core.controller.BaseController;
+import priv.bocayouth.common.web.feat.controller.BaseController;
 import priv.bocayouth.generator.domain.GenTable;
 import priv.bocayouth.generator.domain.GenTableColumn;
 import priv.bocayouth.generator.service.IGenTableService;

@@ -37,7 +37,7 @@ import priv.bocayouth.common.core.helper.LoginHelper;
 public class SecurityConfig implements WebMvcConfigurer {
 
     private final SecurityProperties securityProperties;
-    @Value("${sse.path}")
+    @Value("${sse.path:}")
     private String ssePath;
 
     /**

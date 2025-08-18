@@ -10,7 +10,7 @@ import priv.bocayouth.common.tenant.core.TenantSaTokenDao;
 import priv.bocayouth.common.tenant.handle.PlusTenantLineHandler;
 import priv.bocayouth.common.tenant.handle.TenantKeyPrefixHandler;
 import priv.bocayouth.common.tenant.manager.TenantSpringCacheManager;
-import priv.bocayouth.common.tenant.properties.TenantProperties;
+import priv.bocayouth.common.tenant.config.properties.TenantProperties;
 import org.redisson.config.ClusterServersConfig;
 import org.redisson.config.SingleServerConfig;
 import org.redisson.spring.starter.RedissonAutoConfigurationCustomizer;

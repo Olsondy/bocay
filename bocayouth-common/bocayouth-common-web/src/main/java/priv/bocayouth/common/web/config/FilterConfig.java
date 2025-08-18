@@ -7,7 +7,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import priv.bocayouth.common.web.config.properties.XssProperties;
-import priv.bocayouth.common.web.filter.RepeatableFilter;
+import priv.bocayouth.common.core.filter.RepeatableFilter;
 import priv.bocayouth.common.web.filter.XssFilter;
 
 /**
