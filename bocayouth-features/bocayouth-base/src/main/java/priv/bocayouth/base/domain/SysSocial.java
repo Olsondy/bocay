@@ -15,7 +15,7 @@ import java.io.Serial;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("sys_social")
+@TableName("base_social")
 public class SysSocial extends TenantEntity {
 
     @Serial

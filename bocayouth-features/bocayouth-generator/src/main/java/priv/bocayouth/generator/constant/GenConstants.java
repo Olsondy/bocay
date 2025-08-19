@@ -68,25 +68,25 @@ public interface GenConstants {
     /**
      * BO对象 不需要添加字段
      */
-    String[] COLUMNNAME_NOT_ADD = {"create_dept", "create_by", "create_time", "is_delete", "update_by",
+    String[] COLUMNNAME_NOT_ADD = {"create_dept", "create_by", "create_time", "is_deleted", "update_by",
         "update_time", "version", "tenant_id"};
 
     /**
      * BO对象 不需要编辑字段
      */
-    String[] COLUMNNAME_NOT_EDIT = {"create_dept", "create_by", "create_time", "is_delete", "update_by",
+    String[] COLUMNNAME_NOT_EDIT = {"create_dept", "create_by", "create_time", "is_deleted", "update_by",
         "update_time", "version", "tenant_id"};
 
     /**
      * VO对象 不需要返回字段
      */
-    String[] COLUMNNAME_NOT_LIST = {"create_dept", "create_by", "create_time", "is_delete", "update_by",
+    String[] COLUMNNAME_NOT_LIST = {"create_dept", "create_by", "create_time", "is_deleted", "update_by",
         "update_time", "version", "tenant_id"};
 
     /**
      * BO对象 不需要查询字段
      */
-    String[] COLUMNNAME_NOT_QUERY = {"id", "create_dept", "create_by", "create_time", "is_delete", "update_by",
+    String[] COLUMNNAME_NOT_QUERY = {"id", "create_dept", "create_by", "create_time", "is_deleted", "update_by",
         "update_time", "remark", "version", "tenant_id"};
 
     /**

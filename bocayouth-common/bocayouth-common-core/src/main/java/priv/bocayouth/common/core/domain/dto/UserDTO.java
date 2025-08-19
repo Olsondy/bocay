@@ -56,9 +56,9 @@ public class UserDTO implements Serializable {
     private String phonenumber;
 
     /**
-     * 用户性别（0男 1女 2未知）
+     * 用户性别（1男 0女 2未知）
      */
-    private String sex;
+    private String gender;
 
     /**
      * 帐号状态（0停用 1正常）

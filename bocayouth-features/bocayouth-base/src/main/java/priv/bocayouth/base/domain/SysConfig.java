@@ -14,7 +14,7 @@ import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("sys_config")
+@TableName("base_config")
 public class SysConfig extends TenantEntity {
 
     /**

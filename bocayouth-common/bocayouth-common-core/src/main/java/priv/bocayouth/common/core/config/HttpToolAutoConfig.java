@@ -8,7 +8,6 @@ import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.client.HttpClientAutoConfiguration;
@@ -19,7 +18,6 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.client.*;
 import org.springframework.web.client.RestClient;
-import org.springframework.web.client.RestTemplate;
 import priv.bocayouth.common.core.config.properties.HttpToolProperties;
 import priv.bocayouth.common.core.exception.base.BaseException;
 
@@ -29,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableConfigurationProperties(HttpToolProperties.class)
-@ConditionalOnClass(RestTemplate.class)
 @AutoConfigureAfter(HttpClientAutoConfiguration.class)
 public class HttpToolAutoConfig {
 

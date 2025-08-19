@@ -33,8 +33,8 @@
                         m.order_num,
                         m.create_time
         from sys_menu m
-                 left join sys_role_menu rm on m.menu_id = rm.menu_id and m.status = '0'
-                 left join sys_role r on rm.role_id = r.role_id and r.status = '0'
+                 left join sys_role_menu rm on m.menu_id = rm.menu_id and m.status = '1'
+                 left join sys_role r on rm.role_id = r.role_id and r.status = '1'
         where m.menu_type in ('M', 'C')
           and r.role_id in (select role_id from sys_user_role where user_id = #{userId})
         order by m.parent_id, m.order_num
@@ -55,8 +55,8 @@
     <select id="selectMenuPermsByUserId" parameterType="Long" resultType="String">
         select distinct m.perms
         from sys_menu m
-                 left join sys_role_menu rm on m.menu_id = rm.menu_id and m.status = '0'
-                 left join sys_role r on r.role_id = rm.role_id and r.status = '0'
+                 left join sys_role_menu rm on m.menu_id = rm.menu_id and m.status = '1'
+                 left join sys_role r on r.role_id = rm.role_id and r.status = '1'
         where r.role_id in (select role_id from sys_user_role where user_id = #{userId})
     </select>
 
@@ -64,7 +64,7 @@
         select distinct m.perms
         from sys_menu m
                  left join sys_role_menu rm on m.menu_id = rm.menu_id
-        where m.status = '0' and rm.role_id = #{roleId}
+        where m.status = '1' and rm.role_id = #{roleId}
     </select>
 
 </mapper>

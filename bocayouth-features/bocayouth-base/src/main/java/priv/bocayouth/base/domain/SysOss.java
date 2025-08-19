@@ -13,7 +13,7 @@ import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("sys_oss")
+@TableName("base_oss")
 public class SysOss extends TenantEntity {
 
     /**

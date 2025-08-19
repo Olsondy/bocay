@@ -14,7 +14,7 @@ import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("sys_dict_type")
+@TableName("base_dict_type")
 public class SysDictType extends TenantEntity {
 
     /**

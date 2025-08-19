@@ -13,7 +13,7 @@ import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("sys_oss_config")
+@TableName("base_oss_config")
 public class SysOssConfig extends BaseEntity {
 
     /**

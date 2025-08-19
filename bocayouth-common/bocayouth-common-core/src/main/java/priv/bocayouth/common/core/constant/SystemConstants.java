@@ -10,12 +10,12 @@ public interface SystemConstants {
     /**
      * 正常状态
      */
-    String NORMAL = "0";
+    String NORMAL = "1";
 
     /**
      * 异常状态
      */
-    String DISABLE = "1";
+    String DISABLE = "0";
 
     /**
      * 是否为系统默认（是）
@@ -30,12 +30,12 @@ public interface SystemConstants {
     /**
      * 是否菜单外链（是）
      */
-    String YES_FRAME = "0";
+    String YES_FRAME = "1";
 
     /**
      * 是否菜单外链（否）
      */
-    String NO_FRAME = "1";
+    String NO_FRAME = "0";
 
     /**
      * 菜单类型（目录）
