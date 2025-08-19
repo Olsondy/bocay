@@ -24,7 +24,7 @@
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-core</artifactId>
+            <artifactId>bocayouth-common-infra</artifactId>
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>

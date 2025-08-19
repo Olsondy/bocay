@@ -10,7 +10,7 @@ import cn.idev.excel.metadata.data.ReadCellData;
 import cn.idev.excel.metadata.data.WriteCellData;
 import cn.idev.excel.metadata.property.ExcelContentProperty;
 import lombok.extern.slf4j.Slf4j;
-import priv.bocayouth.common.core.feat.service.DictService;
+import priv.bocayouth.common.base.feat.service.DictService;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.excel.annotation.ExcelDictFormat;

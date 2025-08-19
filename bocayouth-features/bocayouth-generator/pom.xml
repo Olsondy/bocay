@@ -22,10 +22,6 @@
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-excel</artifactId>
         </dependency>
         <dependency>
