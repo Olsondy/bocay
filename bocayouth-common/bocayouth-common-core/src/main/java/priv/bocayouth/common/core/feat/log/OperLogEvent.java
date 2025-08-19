@@ -94,7 +94,7 @@ public class OperLogEvent implements Serializable {
     private String jsonResult;
 
     /**
-     * 操作状态（0正常 1异常）
+     * 操作状态（0异常 1正常）
      */
     private Integer status;
 

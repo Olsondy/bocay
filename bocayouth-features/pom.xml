@@ -12,6 +12,8 @@
 
     <name>bocayouth-features</name>
     <modules>
+        <module>bocayouth-base</module>
         <module>bocayouth-generator</module>
+        <module>bocayouth-system</module>
     </modules>
 </project>

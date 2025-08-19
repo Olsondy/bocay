@@ -18,6 +18,10 @@
     <dependencies>
         <dependency>
             <groupId>priv.bocayouth</groupId>
+            <artifactId>bocayouth-common-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-core</artifactId>
         </dependency>
         <dependency>
@@ -28,7 +32,10 @@
             <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-redis</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>priv.bocayouth</groupId>
+            <artifactId>bocayouth-common-tenant</artifactId>
+        </dependency>
         <!--velocity代码生成使用模板 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>

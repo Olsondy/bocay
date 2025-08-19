@@ -16,28 +16,10 @@
     </description>
 
     <dependencies>
-        <!--  mybatis plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <optional>true</optional>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.mybatis</groupId>
-                    <artifactId>mybatis-spring</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-security</artifactId>
+            <artifactId>bocayouth-common-core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-redis</artifactId>
-        </dependency>
-
 
     </dependencies>
 

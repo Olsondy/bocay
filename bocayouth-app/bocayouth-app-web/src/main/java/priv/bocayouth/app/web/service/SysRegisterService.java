@@ -4,10 +4,6 @@ import cn.hutool.crypto.digest.BCrypt;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import priv.bocayouth.business.dilano.system.domain.SysUser;
-import priv.bocayouth.business.dilano.system.domain.bo.SysUserBo;
-import priv.bocayouth.business.dilano.system.mapper.SysUserMapper;
-import priv.bocayouth.business.dilano.system.service.ISysUserService;
 import priv.bocayouth.common.core.constant.Constants;
 import priv.bocayouth.common.core.constant.GlobalConstants;
 import priv.bocayouth.common.core.domain.model.RegisterBody;
@@ -21,8 +17,12 @@ import priv.bocayouth.common.core.utils.ServletUtils;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.base.feat.helper.TenantHelper;
 import priv.bocayouth.common.security.config.properties.CaptchaProperties;
+import priv.bocayouth.common.tenant.feat.helper.TenantHelper;
+import priv.bocayouth.system.domain.SysUser;
+import priv.bocayouth.system.domain.bo.SysUserBo;
+import priv.bocayouth.system.mapper.SysUserMapper;
+import priv.bocayouth.system.service.ISysUserService;
 
 /**
  * 注册校验方法

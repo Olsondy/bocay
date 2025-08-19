@@ -15,14 +15,14 @@ import priv.bocayouth.generator.constant.GenConstants;
 import java.util.List;
 
 /**
- * 业务表 gen_table
+ * 业务表 sys_gen_table
  *
  * @author Lion Li
  */
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("gen_table")
+@TableName("sys_gen_table")
 public class GenTable extends BaseEntity {
 
     /**

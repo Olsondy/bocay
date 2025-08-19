@@ -105,8 +105,7 @@ public class PlusSaTokenDao implements SaTokenDaoBySessionFollowObject {
      */
     @Override
     public Object getObject(String key) {
-        Object o = CAFFEINE.get(key, k -> RedisUtils.getCacheObject(key));
-        return o;
+        return CAFFEINE.get(key, k -> RedisUtils.getCacheObject(key));
     }
 
     /**

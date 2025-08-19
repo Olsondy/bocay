@@ -16,9 +16,10 @@
         <module>bocayouth-common-base</module>
         <module>bocayouth-common-core</module>
         <module>bocayouth-common-excel</module>
+        <module>bocayouth-common-infra</module>
+        <module>bocayouth-common-mobile</module>
         <module>bocayouth-common-redis</module>
         <module>bocayouth-common-security</module>
-        <module>bocayouth-common-mobile</module>
-        <module>bocayouth-common-infra</module>
+        <module>bocayouth-common-tenant</module>
     </modules>
 </project>

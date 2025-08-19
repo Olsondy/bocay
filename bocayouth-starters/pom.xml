@@ -52,7 +52,11 @@
                 <artifactId>bocayouth-common-security</artifactId>
                 <version>${revision}</version>
             </dependency>
-
+            <dependency>
+                <groupId>priv.bocayouth</groupId>
+                <artifactId>bocayouth-common-tenant</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

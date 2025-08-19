@@ -1,5 +1,5 @@
 priv.bocayouth.common.base.config.ConversionConfig
-priv.bocayouth.common.base.config.TenantConfig
+priv.bocayouth.common.tenant.config.TenantConfig
 priv.bocayouth.common.base.feat.service.impl.DeptNameTranslationImpl
 priv.bocayouth.common.base.feat.service.impl.DictTypeTranslationImpl
 priv.bocayouth.common.base.feat.service.impl.UserNameTranslationImpl

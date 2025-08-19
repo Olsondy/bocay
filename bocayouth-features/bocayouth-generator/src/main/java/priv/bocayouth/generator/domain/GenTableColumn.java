@@ -12,13 +12,13 @@ import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
 import priv.bocayouth.common.core.utils.StringUtils;
 
 /**
- * 代码生成业务字段表 gen_table_column
+ * 代码生成业务字段表 sys_gen_table_column
  *
  * @author Lion Li
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@TableName("gen_table_column")
+@TableName("sys_gen_table_column")
 public class GenTableColumn extends BaseEntity {
 
     /**

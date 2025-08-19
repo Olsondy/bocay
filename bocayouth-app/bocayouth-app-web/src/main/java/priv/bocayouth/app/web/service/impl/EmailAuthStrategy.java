@@ -7,10 +7,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import priv.bocayouth.business.dilano.system.domain.SysUser;
-import priv.bocayouth.business.dilano.system.domain.vo.SysClientVo;
-import priv.bocayouth.business.dilano.system.domain.vo.SysUserVo;
-import priv.bocayouth.business.dilano.system.mapper.SysUserMapper;
+import priv.bocayouth.app.web.domain.vo.LoginVo;
+import priv.bocayouth.app.web.service.IAuthStrategy;
+import priv.bocayouth.app.web.service.SysLoginService;
+import priv.bocayouth.base.domain.vo.SysClientVo;
 import priv.bocayouth.common.core.constant.Constants;
 import priv.bocayouth.common.core.constant.GlobalConstants;
 import priv.bocayouth.common.core.constant.SystemConstants;
@@ -25,10 +25,10 @@ import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.core.utils.ValidatorUtils;
 import priv.bocayouth.common.core.utils.jackson.JsonUtils;
 import priv.bocayouth.common.redis.utils.RedisUtils;
-import priv.bocayouth.common.base.feat.helper.TenantHelper;
-import priv.bocayouth.app.web.domain.vo.LoginVo;
-import priv.bocayouth.app.web.service.IAuthStrategy;
-import priv.bocayouth.app.web.service.SysLoginService;
+import priv.bocayouth.common.tenant.feat.helper.TenantHelper;
+import priv.bocayouth.system.domain.SysUser;
+import priv.bocayouth.system.domain.vo.SysUserVo;
+import priv.bocayouth.system.mapper.SysUserMapper;
 
 /**
  * 邮件认证策略

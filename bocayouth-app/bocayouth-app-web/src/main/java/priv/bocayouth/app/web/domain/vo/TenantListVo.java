@@ -2,7 +2,7 @@ package priv.bocayouth.app.web.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
-import priv.bocayouth.business.dilano.system.domain.vo.SysTenantVo;
+import priv.bocayouth.system.domain.vo.SysTenantVo;
 
 /**
  * 租户列表

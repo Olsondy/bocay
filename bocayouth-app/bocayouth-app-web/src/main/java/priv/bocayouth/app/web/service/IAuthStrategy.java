@@ -1,7 +1,7 @@
 package priv.bocayouth.app.web.service;
 
 
-import priv.bocayouth.business.dilano.system.domain.vo.SysClientVo;
+import priv.bocayouth.base.domain.vo.SysClientVo;
 import priv.bocayouth.common.core.exception.ServiceException;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.app.web.domain.vo.LoginVo;
