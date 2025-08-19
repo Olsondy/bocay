@@ -13,7 +13,7 @@ import priv.bocayouth.common.core.enums.BusinessType;
 import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
-import priv.bocayouth.common.base.feat.service.DictService;
+import priv.bocayouth.common.core.feat.service.DictService;
 import priv.bocayouth.common.infra.utils.SseMessageUtils;
 
 /**

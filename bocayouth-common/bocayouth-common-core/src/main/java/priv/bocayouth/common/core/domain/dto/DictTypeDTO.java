@@ -1,4 +1,4 @@
-package priv.bocayouth.common.base.domain.dto;
+package priv.bocayouth.common.core.domain.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,31 +7,31 @@ import java.io.Serial;
 import java.io.Serializable;
 
 /**
- * 字典数据DTO
+ * 字典类型DTO
  *
  * @author AprilWind
  */
 @Data
 @NoArgsConstructor
-public class DictDataDTO implements Serializable {
+public class DictTypeDTO implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
 
     /**
-     * 字典标签
+     * 字典主键
      */
-    private String dictLabel;
+    private Long dictId;
 
     /**
-     * 字典键值
+     * 字典名称
      */
-    private String dictValue;
+    private String dictName;
 
     /**
-     * 是否默认（Y是 N否）
+     * 字典类型
      */
-    private String isDefault;
+    private String dictType;
 
     /**
      * 备注

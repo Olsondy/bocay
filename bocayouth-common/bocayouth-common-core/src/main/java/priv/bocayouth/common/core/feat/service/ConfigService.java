@@ -1,4 +1,4 @@
-package priv.bocayouth.common.base.feat.service;
+package priv.bocayouth.common.core.feat.service;
 
 /**
  * 通用 参数配置服务

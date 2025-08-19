@@ -1,4 +1,4 @@
-package priv.bocayouth.common.infra.domain.dto;
+package priv.bocayouth.common.core.domain.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-base</artifactId>
+            <artifactId>bocayouth-common-core</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.idev.excel</groupId>

@@ -1,4 +1,4 @@
-package priv.bocayouth.common.base.validate;
+package priv.bocayouth.common.core.validate.dicts;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

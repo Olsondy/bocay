@@ -1,8 +1,7 @@
-package priv.bocayouth.common.base.feat.service;
+package priv.bocayouth.common.core.feat.service;
 
-
-import priv.bocayouth.common.base.domain.dto.DictDataDTO;
-import priv.bocayouth.common.base.domain.dto.DictTypeDTO;
+import priv.bocayouth.common.core.domain.dto.DictDataDTO;
+import priv.bocayouth.common.core.domain.dto.DictTypeDTO;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package priv.bocayouth.common.base.feat.service;
+package priv.bocayouth.common.core.feat.service;
 
 import priv.bocayouth.common.core.domain.dto.DeptDTO;
 

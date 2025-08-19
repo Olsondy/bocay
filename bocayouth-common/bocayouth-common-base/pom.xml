@@ -20,6 +20,7 @@
             <groupId>priv.bocayouth</groupId>
             <artifactId>bocayouth-common-core</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
