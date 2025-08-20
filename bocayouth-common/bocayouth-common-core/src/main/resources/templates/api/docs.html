@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Scalar API Reference</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+<div id="app"></div>
+<script src="../../static/scalar/api-reference.js"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+        Scalar.createApiReference('#app', {
+            // The URL of the OpenAPI/Swagger document
+            url: /*[[${apiDocsUrl}]]*/ '/v3/api-docs.yaml',
+            hideDownloadButton:  /*[[${hideDownloadButton}]]*/ true,
+        })
+    /*]]>*/
+</script>
+</body>
+</html>

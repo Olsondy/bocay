@@ -126,7 +126,7 @@ security:
     - /**/*.js
     - /favicon.ico
     - /error
-    - /*/api-docs
+    - /*/api-docs.**
     - /*/api-docs/**
     - /warm-flow-ui/config
 
@@ -195,6 +195,9 @@ springdoc:
   api-docs:
     # 是否开启接口文档
     enabled: true
+    # 配合scalar ui 显示api docs 的参数
+    v3-url: '/v3/api-docs.yaml'
+    hideDownloadButton: true
   info:
     # 标题
     title: '标题：RuoYi-Vue-Plus多租户管理系统_接口文档'

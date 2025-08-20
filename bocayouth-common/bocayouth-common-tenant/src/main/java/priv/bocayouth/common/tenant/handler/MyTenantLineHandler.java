@@ -1,6 +1,7 @@
 package priv.bocayouth.common.tenant.handler;
 
 import cn.hutool.core.collection.ListUtil;
+import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
@@ -19,7 +20,7 @@ import java.util.List;
  */
 @Slf4j
 @AllArgsConstructor
-public class TenantLineHandler implements com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler {
+public class MyTenantLineHandler implements TenantLineHandler {
 
     private final TenantProperties tenantProperties;
 

@@ -20,7 +20,7 @@ import priv.bocayouth.common.tenant.config.properties.TenantProperties;
 import priv.bocayouth.common.tenant.feat.TenantKeyPrefixHandler;
 import priv.bocayouth.common.tenant.feat.dao.TenantSaTokenDao;
 import priv.bocayouth.common.tenant.feat.manager.TenantSpringCacheManager;
-import priv.bocayouth.common.tenant.handler.TenantLineHandler;
+import priv.bocayouth.common.tenant.handler.MyTenantLineHandler;
 
 /**
  * 租户配置类
@@ -41,7 +41,7 @@ public class TenantConfig {
          */
         @Bean
         public TenantLineInnerInterceptor tenantLineInnerInterceptor(TenantProperties tenantProperties) {
-            return new TenantLineInnerInterceptor(new TenantLineHandler(tenantProperties));
+            return new TenantLineInnerInterceptor(new MyTenantLineHandler(tenantProperties));
         }
 
     }

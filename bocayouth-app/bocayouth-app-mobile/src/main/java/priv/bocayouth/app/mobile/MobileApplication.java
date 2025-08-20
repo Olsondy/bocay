@@ -1,13 +1,14 @@
 package priv.bocayouth.app.mobile;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 
-@Log4j2
+@Slf4j
 @SpringBootApplication(scanBasePackages = "priv.bocayouth.**")
 public class MobileApplication implements ApplicationRunner {
     @Override
