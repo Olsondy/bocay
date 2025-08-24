@@ -1,0 +1,78 @@
+version: '3'
+services:
+  # 数据库服务（PostgreSQL）
+  pgsql:
+    image: postgres:13
+    container_name: pgsql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: techwork
+      POSTGRES_PASSWORD: techwork@202508
+      POSTGRES_DB: techwork
+      LANG: C.UTF-8
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U myuser -d mydb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - work_net
+  # redis
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6380:6379"
+    volumes:
+      - ./redis/data:/data
+      - ./redis/conf/redis.conf:/etc/redis/conf/redis.conf
+      - ./redis/logs:/logs
+    #配置文件启动
+    command: redis-server /etc/redis/conf/redis.conf
+    networks:
+      - work_net
+  # 存储服务
+  minio:
+    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z
+    container_name: minio
+    restart: always
+    command: server --console-address ":9190" /data
+    environment:
+      MINIO_ROOT_USER: miniostoreadmin
+      MINIO_ROOT_PASSWORD: admin123
+      TZ: Asia/Shanghai
+    volumes:
+      - ./minio/data:/data
+      - ./minio/config:/root/.minio
+    ports:
+      - "9000:9000"
+      - "9190:9190"
+    networks:
+      - work_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  # 容器管理
+  portainer_ce:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    ports: 
+      # 注意官方教程中使用9443端口是用于https的,没有证书的无法启用
+       - "9002:9000" #http ui port
+       - "8000:8000"
+    volumes:
+       # 挂载自定义配置
+      - ./portainer/data:/data
+      - /run/user/${CURRENT_UID}/podman/podman.sock:/var/run/docker.sock
+    restart: always  # 自动重启
+    privileged: true
+    networks:
+      - work_net
+networks:
+  work_net:
+    driver: bridge

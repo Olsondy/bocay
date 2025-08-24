@@ -1,0 +1,72 @@
+version: '3'
+services:
+  # 存储服务
+  minio:
+    # minio 最后一个未阉割版本 不能再进行升级 在往上的版本功能被阉割
+    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z
+    container_name: minio
+    restart: always
+    command: server --console-address ":9190" /data
+    environment:
+      MINIO_ROOT_USER: miniostoreadmin
+      MINIO_ROOT_PASSWORD: admin123
+      TZ: Asia/Shanghai
+    volumes:
+      - ./minio/data:/data
+      - ./minio/config:/root/.minio
+    ports:
+      - "9000:9000"
+      - "9190:9190"
+    networks:
+      - work_net
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+  rustfs:
+    container_name: rustfs
+    image: rustfs/rustfs:latest
+    ports:
+      - "9290:9000"
+    volumes:
+      - ./rustfs/data:/data
+    environment:
+      - RUSTFS_ACCESS_KEY=rustfsstoreadmin
+      - RUSTFS_SECRET_KEY=admin123
+      - RUSTFS_CONSOLE_ENABLE=true
+      - RUSTFS_SERVER_DOMAINS=https://storage.techwork.cloud
+    restart: unless-stopped
+    networks:
+      - work_net
+    # 存储服务
+  garage:
+    image: dxflrs/garage:v1.1.0
+    container_name: garage
+    restart: unless-stopped
+    ports:
+      - "3900:3900"   ## s3 api
+      - "3901:3901"   ## rpc
+      - "3902:3902"   ## s3 web
+      - "3903:3903"   ## admin api and '/metrics' for prometheus
+    volumes:
+      - ./garage/garage.toml:/etc/garage.toml
+      - ./garage/meta:/var/lib/garage/meta
+      - ./garage/data:/var/lib/garage/data
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - work_net
+  garage-webui:
+    image: khairul169/garage-webui:latest
+    container_name: garage-webui
+    restart: unless-stopped
+    ports:
+      - "3909:3909"
+    volumes:
+      - ./garage/garage.toml:/etc/garage.toml:ro
+    environment:
+      API_BASE_URL: "http://garage:3903"
+      S3_ENDPOINT_URL: "http://garage:3900"
+    networks:
+      - work_net

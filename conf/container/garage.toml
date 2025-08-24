@@ -1,0 +1,24 @@
+metadata_dir = "/var/lib/garage/meta"
+data_dir = "/var/lib/garage/data"
+db_engine = "sqlite"
+
+replication_factor = 1
+
+rpc_bind_addr = "[::]:3901"
+rpc_public_addr = "localhost:3901"
+rpc_secret = "f1b082015ee1564f71634d2a3985ef7092ba1f6f27d952d98cc964bc2a2a1526"
+
+[s3_api]
+s3_region = "garage"
+api_bind_addr = "[::]:3900"
+root_domain = ".s3-garage.techwork.cloud"
+
+[s3_web]
+bind_addr = "[::]:3902"
+root_domain = ".techwork.cloud"
+index = "index.html"
+
+[admin]
+api_bind_addr = "[::]:3903"
+admin_token = "5ac4f2778731704a1f03c1b267fea1ccaa14f61782945cd8960e7492471b327a"
+metrics_token = "a684ce3d9ef9a847e0fb073392f15d91eb42bddec3d09479f844d1074c20544b"
