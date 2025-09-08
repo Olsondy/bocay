@@ -2,7 +2,6 @@ package priv.bocayouth.generator.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix = "gen")
-@PropertySource(value = {"classpath:generator.yml"}, encoding = "UTF-8")
 public class GenConfig {
 
     /**
@@ -39,7 +37,7 @@ public class GenConfig {
         return author;
     }
 
-    @Value("${author}")
+    @Value("${gen.author}")
     public void setAuthor(String author) {
         GenConfig.author = author;
     }
@@ -48,7 +46,7 @@ public class GenConfig {
         return packageName;
     }
 
-    @Value("${packageName}")
+    @Value("${gen.packageName}")
     public void setPackageName(String packageName) {
         GenConfig.packageName = packageName;
     }
@@ -57,7 +55,7 @@ public class GenConfig {
         return autoRemovePre;
     }
 
-    @Value("${autoRemovePre}")
+    @Value("${gen.autoRemovePre}")
     public void setAutoRemovePre(boolean autoRemovePre) {
         GenConfig.autoRemovePre = autoRemovePre;
     }
@@ -66,7 +64,7 @@ public class GenConfig {
         return tablePrefix;
     }
 
-    @Value("${tablePrefix}")
+    @Value("${gen.tablePrefix}")
     public void setTablePrefix(String tablePrefix) {
         GenConfig.tablePrefix = tablePrefix;
     }
