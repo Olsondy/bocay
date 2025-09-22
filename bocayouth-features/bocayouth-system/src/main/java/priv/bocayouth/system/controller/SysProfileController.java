@@ -1,23 +1,32 @@
 package priv.bocayouth.system.controller;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.crypto.digest.BCrypt;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import priv.bocayouth.base.domain.vo.SysOssVo;
+import priv.bocayouth.base.service.ISysOssService;
 import priv.bocayouth.common.core.annotation.Log;
 import priv.bocayouth.common.core.annotation.encrypt.ApiEncrypt;
 import priv.bocayouth.common.core.domain.R;
 import priv.bocayouth.common.core.enums.BusinessType;
+import priv.bocayouth.common.core.feat.controller.BaseController;
 import priv.bocayouth.common.core.helper.DataPermissionHelper;
 import priv.bocayouth.common.core.helper.LoginHelper;
 import priv.bocayouth.common.core.utils.StringUtils;
-import priv.bocayouth.common.core.feat.controller.BaseController;
+import priv.bocayouth.common.core.utils.file.MimeTypeUtils;
+import priv.bocayouth.common.redis.annotation.RepeatSubmit;
 import priv.bocayouth.system.domain.bo.SysUserBo;
 import priv.bocayouth.system.domain.bo.SysUserPasswordBo;
 import priv.bocayouth.system.domain.bo.SysUserProfileBo;
 import priv.bocayouth.system.domain.vo.SysUserVo;
 import priv.bocayouth.system.service.ISysUserService;
+
+import java.util.Arrays;
 
 /**
  * 个人信息 业务处理
@@ -31,6 +40,7 @@ import priv.bocayouth.system.service.ISysUserService;
 public class SysProfileController extends BaseController {
 
     private final ISysUserService userService;
+    private final ISysOssService ossService;
 
     /**
      * 个人信息
@@ -47,6 +57,7 @@ public class SysProfileController extends BaseController {
     /**
      * 修改用户信息
      */
+    @RepeatSubmit
     @Log(title = "个人信息", businessType = BusinessType.UPDATE)
     @PutMapping
     public R<Void> updateProfile(@Validated @RequestBody SysUserProfileBo profile) {
@@ -71,6 +82,7 @@ public class SysProfileController extends BaseController {
      *
      * @param bo 新旧密码
      */
+    @RepeatSubmit
     @ApiEncrypt
     @Log(title = "个人信息", businessType = BusinessType.UPDATE)
     @PutMapping("/updatePwd")
@@ -88,6 +100,30 @@ public class SysProfileController extends BaseController {
             return R.ok();
         }
         return R.fail("修改密码异常，请联系管理员");
+    }
+
+    /**
+     * 头像上传
+     *
+     * @param avatarfile 用户头像
+     */
+    @RepeatSubmit
+    @Log(title = "用户头像", businessType = BusinessType.UPDATE)
+    @PostMapping(value = "/avatar", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public R<AvatarVo> avatar(@RequestPart("avatarfile") MultipartFile avatarfile) {
+        if (!avatarfile.isEmpty()) {
+            String extension = FileUtil.extName(avatarfile.getOriginalFilename());
+            if (!StringUtils.equalsAnyIgnoreCase(extension, MimeTypeUtils.IMAGE_EXTENSION)) {
+                return R.fail("文件格式不正确，请上传" + Arrays.toString(MimeTypeUtils.IMAGE_EXTENSION) + "格式");
+            }
+            SysOssVo oss = ossService.upload(avatarfile);
+            String avatar = oss.getUrl();
+            boolean updateSuccess = DataPermissionHelper.ignore(() -> userService.updateUserAvatar(LoginHelper.getUserId(), oss.getOssId()));
+            if (updateSuccess) {
+                return R.ok(new AvatarVo(avatar));
+            }
+        }
+        return R.fail("上传图片异常，请联系管理员");
     }
 
     public record AvatarVo(String imgUrl) {}
