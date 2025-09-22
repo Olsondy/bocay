@@ -46,7 +46,7 @@ public class ConversionHandler extends JsonSerializer<Object> implements Context
                 gen.writeNull();
                 return;
             }
-            Object result = trans.translation(value, conversion.other());
+            Object result = trans.conversion(value, conversion.other());
             gen.writeObject(result);
         } else {
             gen.writeObject(value);

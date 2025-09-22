@@ -14,12 +14,12 @@ import priv.bocayouth.common.core.utils.StringUtils;
  */
 @AllArgsConstructor
 @ConversionType(type = ConversionConstant.DICT_TYPE_TO_LABEL)
-public class DictTypeTranslationImpl implements ConversionInterface<String> {
+public class DictTypeConversionImpl implements ConversionInterface<String> {
 
     private final DictService dictService;
 
     @Override
-    public String translation(Object key, String other) {
+    public String conversion(Object key, String other) {
         if (key instanceof String dictValue && StringUtils.isNotBlank(other)) {
             return dictService.getDictLabel(other, dictValue);
         }

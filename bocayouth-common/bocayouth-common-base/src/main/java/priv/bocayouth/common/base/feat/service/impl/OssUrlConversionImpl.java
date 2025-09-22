@@ -4,25 +4,25 @@ import lombok.AllArgsConstructor;
 import priv.bocayouth.common.base.annotation.ConversionType;
 import priv.bocayouth.common.base.constant.ConversionConstant;
 import priv.bocayouth.common.base.feat.service.ConversionInterface;
-import priv.bocayouth.common.core.feat.service.DeptService;
+import priv.bocayouth.common.core.feat.service.OssService;
 
 /**
- * 部门转换实现
+ * OSS翻译实现
  *
  * @author Lion Li
  */
 @AllArgsConstructor
-@ConversionType(type = ConversionConstant.DEPT_ID_TO_NAME)
-public class DeptNameTranslationImpl implements ConversionInterface<String> {
+@ConversionType(type = ConversionConstant.OSS_ID_TO_URL)
+public class OssUrlConversionImpl implements ConversionInterface<String> {
 
-    private final DeptService deptService;
+    private final OssService ossService;
 
     @Override
-    public String translation(Object key, String other) {
+    public String conversion(Object key, String other) {
         if (key instanceof String ids) {
-            return deptService.selectDeptNameByIds(ids);
+            return ossService.selectUrlByIds(ids);
         } else if (key instanceof Long id) {
-            return deptService.selectDeptNameByIds(id.toString());
+            return ossService.selectUrlByIds(id.toString());
         }
         return null;
     }

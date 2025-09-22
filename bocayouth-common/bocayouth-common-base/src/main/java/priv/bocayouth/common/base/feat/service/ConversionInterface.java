@@ -17,5 +17,5 @@ public interface ConversionInterface<T> {
      * @param other 其他参数
      * @return 返回键对应的值
      */
-    T translation(Object key, String other);
+    T conversion(Object key, String other);
 }

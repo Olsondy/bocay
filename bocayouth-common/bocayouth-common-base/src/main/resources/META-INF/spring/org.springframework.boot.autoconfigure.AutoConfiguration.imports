@@ -1,6 +1,7 @@
 priv.bocayouth.common.base.config.ConversionConfig
 priv.bocayouth.common.tenant.config.TenantConfig
-priv.bocayouth.common.base.feat.service.impl.DeptNameTranslationImpl
-priv.bocayouth.common.base.feat.service.impl.DictTypeTranslationImpl
-priv.bocayouth.common.base.feat.service.impl.UserNameTranslationImpl
-priv.bocayouth.common.base.feat.service.impl.NicknameTranslationImpl
+priv.bocayouth.common.base.feat.service.impl.DeptNameConversionImpl
+priv.bocayouth.common.base.feat.service.impl.DictTypeConversionImpl
+priv.bocayouth.common.base.feat.service.impl.NicknameConversionImpl
+priv.bocayouth.common.base.feat.service.impl.OssUrlConversionImpl
+priv.bocayouth.common.base.feat.service.impl.UserNameConversionImpl
