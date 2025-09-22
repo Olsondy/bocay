@@ -2,6 +2,9 @@ package priv.bocayouth.common.infra.feat.client;
 
 import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.IdUtil;
+import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 import priv.bocayouth.common.core.constant.Constants;
 import priv.bocayouth.common.core.utils.DateUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
@@ -14,8 +17,8 @@ import priv.bocayouth.common.infra.exception.OssException;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.core.ResponseInputStream;
+import software.amazon.awssdk.core.async.AsyncRequestBody;
 import software.amazon.awssdk.core.async.AsyncResponseTransformer;
-import software.amazon.awssdk.core.async.BlockingInputStreamAsyncRequestBody;
 import software.amazon.awssdk.http.nio.netty.NettyNioAsyncHttpClient;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3AsyncClient;
@@ -29,10 +32,12 @@ import software.amazon.awssdk.transfer.s3.progress.LoggingTransferListener;
 import java.io.*;
 import java.net.URI;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.time.Duration;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 /**
  * S3 存储协议 所有兼容S3协议的云厂商均支持
@@ -45,28 +50,33 @@ public class OssClient {
     /**
      * 服务商
      */
-    private final String configKey;
+    private String configKey;
 
     /**
      * 配置属性
      */
-    private final OssProperties properties;
+    private OssProperties properties;
 
     /**
      * Amazon S3 异步客户端
      */
-    private final S3AsyncClient client;
+    private S3AsyncClient client;
 
     /**
      * 用于管理 S3 数据传输的高级工具
      */
-    private final S3TransferManager transferManager;
+    private S3TransferManager transferManager;
 
     /**
      * AWS S3 预签名 URL 的生成器
      */
-    private final S3Presigner presigner;
+    private S3Presigner presigner;
 
+    @Getter
+    @Setter
+    private String multipartLocation;
+
+    public OssClient() {}
     /**
      * 构造方法
      *
@@ -169,33 +179,50 @@ public class OssClient {
      * @throws OssException 如果上传失败，抛出自定义异常
      */
     public UploadResult upload(InputStream inputStream, String key, Long length, String contentType) {
-        // 如果输入流不是 ByteArrayInputStream，则将其读取为字节数组再创建 ByteArrayInputStream
-        if (!(inputStream instanceof ByteArrayInputStream)) {
-            inputStream = new ByteArrayInputStream(IoUtil.readBytes(inputStream));
-        }
-        try {
-            // 创建异步请求体（length如果为空会报错）
-            BlockingInputStreamAsyncRequestBody body = BlockingInputStreamAsyncRequestBody.builder()
-                .contentLength(length)
-                .subscribeTimeout(Duration.ofSeconds(30))
-                .build();
+        ExecutorService executor = null;
+        Path tempFile = null;
+        byte[] bytes = null;
 
-            // 使用 transferManager 进行上传
-            Upload upload = transferManager.upload(
-                x -> x.requestBody(body)
-                    .putObjectRequest(
-                        y -> y.bucket(properties.getBucketName())
+        try {
+            // === 1. 计算并确保临时目录（从配置读取或回退） ===
+            String configuredDir = multipartLocation;
+            Path tmpDirPath = (configuredDir == null || configuredDir.isBlank())
+                    ? Paths.get(System.getProperty("java.io.tmpdir"))
+                    : Paths.get(configuredDir);
+
+            Files.createDirectories(tmpDirPath); // 如果不存在就创建，若无权限会抛出异常
+
+            // === 2. 处理输入流：小流保存在内存，大流写到临时文件 ===
+            boolean inMemory = inputStream instanceof ByteArrayInputStream;
+            if (inMemory) {
+                // 对于 ByteArrayInputStream 可安全全部读入内存
+                bytes = IoUtil.readBytes(inputStream);
+                if (length == null) {
+                    length = (long) bytes.length;
+                }
+            } else {
+                // 把流写到临时文件（放在配置的 tmp 目录下）
+                tempFile = Files.createTempFile(tmpDirPath, "s3-upload-", ".tmp");
+//                long copied = Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
+//                if (length == null) {
+//                    length = Files.size(tempFile);
+//                }
+            }
+
+            // === 3. 构造 Supplier<InputStream>（每次返回新的流实例） ===
+            Supplier<InputStream> supplier = getInputStreamSupplier(tempFile, inMemory, bytes);
+
+            // === 4. 创建线程池并构造 AsyncRequestBody 由 SDK 在后台读取 ===
+            executor = Executors.newFixedThreadPool(1);
+            AsyncRequestBody body = AsyncRequestBody.fromInputStream(supplier.get(), length, executor);
+
+            // === 5. 发起上传并等待完成 ===
+            Upload upload = transferManager.upload(r -> r.requestBody(body)
+                    .putObjectRequest(p -> p.bucket(properties.getBucketName())
                             .key(key)
                             .contentType(contentType)
-                            // 用于设置对象的访问控制列表（ACL）。不同云厂商对ACL的支持和实现方式有所不同，
-                            // 因此根据具体的云服务提供商，你可能需要进行不同的配置（自行开启，阿里云有acl权限配置，腾讯云没有acl权限配置）
-                            //.acl(getAccessPolicy().getObjectCannedACL())
                             .build())
                     .build());
-
-            // 将输入流写入请求体
-            body.writeInputStream(inputStream);
-
             // 等待文件上传操作完成
             CompletedUpload uploadResult = upload.completionFuture().join();
             String eTag = uploadResult.response().eTag();
@@ -204,7 +231,38 @@ public class OssClient {
             return UploadResult.builder().url(getUrl() + StringUtils.SLASH + key).filename(key).eTag(eTag).build();
         } catch (Exception e) {
             throw new OssException("上传文件失败，请检查配置信息:[" + e.getMessage() + "]");
+        } finally {
+            // 关闭线程池并删除临时文件（如有）
+            if (executor != null) {
+                try {
+                    executor.shutdownNow();
+                } catch (Exception ignored) {}
+            }
+            if (tempFile != null) {
+                try {
+                    Files.deleteIfExists(tempFile);
+                } catch (IOException ignored) {}
+            }
         }
+    }
+
+    @NotNull
+    private static Supplier<InputStream> getInputStreamSupplier(Path tempFile, boolean inMemory, byte[] bytes) {
+        final Path finalTempFile = tempFile;
+        Supplier<InputStream> supplier;
+        if (inMemory) {
+            final byte[] finalBytes = bytes;
+            supplier = () -> new ByteArrayInputStream(finalBytes);
+        } else {
+            supplier = () -> {
+                try {
+                    return Files.newInputStream(finalTempFile, StandardOpenOption.READ);
+                } catch (IOException e) {
+                    throw new UncheckedIOException(e);
+                }
+            };
+        }
+        return supplier;
     }
 
     /**
