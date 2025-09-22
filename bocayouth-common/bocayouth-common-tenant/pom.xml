@@ -4,7 +4,7 @@
     <parent>
         <groupId>priv.bocayouth</groupId>
         <artifactId>bocayouth-common</artifactId>
-        <version>0.0.1</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>bocayouth-common-tenant</artifactId>
