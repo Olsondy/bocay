@@ -16,6 +16,7 @@ import priv.bocayouth.base.domain.vo.SysOssConfigVo;
 import priv.bocayouth.base.mapper.SysOssConfigMapper;
 import priv.bocayouth.base.service.ISysOssConfigService;
 import priv.bocayouth.common.core.constant.CacheNames;
+import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.exception.ServiceException;
 import priv.bocayouth.common.core.feat.mybaits.PageQuery;
 import priv.bocayouth.common.core.feat.mybaits.TableDataInfo;
@@ -166,7 +167,7 @@ public class SysOssConfigServiceImpl implements ISysOssConfigService {
     public int updateOssConfigStatus(SysOssConfigBo bo) {
         SysOssConfig sysOssConfig = MapstructUtils.convert(bo, SysOssConfig.class);
         int row = baseMapper.update(null, new LambdaUpdateWrapper<SysOssConfig>()
-            .set(SysOssConfig::getStatus, "1"));
+            .set(SysOssConfig::getStatus, SystemConstants.DISABLE));
         row += baseMapper.updateById(sysOssConfig);
         if (row > 0) {
             RedisUtils.setCacheObject(OssConstant.DEFAULT_CONFIG_KEY, sysOssConfig.getConfigKey());
