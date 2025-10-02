@@ -60,7 +60,7 @@
         <!-- AsyncLogger 是基于Disruptor的全量异步队列，性能极高，队列默认大小4096。-->
         <!-- 队列默认值可通过JVM参数设置，参考博客：https://www.jianshu.com/p/82469047acbf -->
         <!-- 这里将dao的日志级别设置为DEBUG，是为了SQL语句的输出 -->
-        <AsyncLogger name="priv.bocayouth.business.dilano.system.mapper" additivity="false" level="debug">
+        <AsyncLogger name="priv.bocayouth.system.mapper" additivity="false" level="debug">
             <AppenderRef ref="console"/>
             <AppenderRef ref="file_log"/>
         </AsyncLogger>
