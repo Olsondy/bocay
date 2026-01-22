@@ -72,7 +72,7 @@ public class SysUserServiceImpl implements ISysUserService, UserService {
     public List<SysUserExportVo> selectUserExportList(SysUserBo user) {
         Map<String, Object> params = user.getParams();
         QueryWrapper<SysUser> wrapper = Wrappers.query();
-        wrapper.eq("u.is_deleted", SystemConstants.NORMAL)
+        wrapper.eq("u.is_deleted", "0")
             .like(StringUtils.isNotBlank(user.getUserName()), "u.user_name", user.getUserName())
             .like(StringUtils.isNotBlank(user.getNickName()), "u.nick_name", user.getNickName())
             .eq(StringUtils.isNotBlank(user.getStatus()), "u.status", user.getStatus())
@@ -91,7 +91,7 @@ public class SysUserServiceImpl implements ISysUserService, UserService {
     private Wrapper<SysUser> buildQueryWrapper(SysUserBo user) {
         Map<String, Object> params = user.getParams();
         LambdaQueryWrapper<SysUser> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(SysUser::getDeleted, SystemConstants.NORMAL)
+        wrapper.eq(SysUser::getDeleted, "0")
             .eq(ObjectUtil.isNotNull(user.getUserId()), SysUser::getUserId, user.getUserId())
             .in(StringUtils.isNotBlank(user.getUserIds()), SysUser::getUserId, StringUtils.splitTo(user.getUserIds(), Convert::toLong))
             .like(StringUtils.isNotBlank(user.getUserName()), SysUser::getUserName, user.getUserName())
@@ -121,7 +121,7 @@ public class SysUserServiceImpl implements ISysUserService, UserService {
     @Override
     public TableDataInfo<SysUserVo> selectAllocatedList(SysUserBo user, PageQuery pageQuery) {
         QueryWrapper<SysUser> wrapper = Wrappers.query();
-        wrapper.eq("u.is_deleted", SystemConstants.NORMAL)
+        wrapper.eq("u.is_deleted", "0")
             .eq(ObjectUtil.isNotNull(user.getRoleId()), "r.role_id", user.getRoleId())
             .like(StringUtils.isNotBlank(user.getUserName()), "u.user_name", user.getUserName())
             .eq(StringUtils.isNotBlank(user.getStatus()), "u.status", user.getStatus())
@@ -141,7 +141,7 @@ public class SysUserServiceImpl implements ISysUserService, UserService {
     public TableDataInfo<SysUserVo> selectUnallocatedList(SysUserBo user, PageQuery pageQuery) {
         List<Long> userIds = userRoleMapper.selectUserIdsByRoleId(user.getRoleId());
         QueryWrapper<SysUser> wrapper = Wrappers.query();
-        wrapper.eq("u.is_deleted", SystemConstants.NORMAL)
+        wrapper.eq("u.is_deleted", "0")
             .and(w -> w.ne("r.role_id", user.getRoleId()).or().isNull("r.role_id"))
             .notIn(CollUtil.isNotEmpty(userIds), "u.user_id", userIds)
             .like(StringUtils.isNotBlank(user.getUserName()), "u.user_name", user.getUserName())
