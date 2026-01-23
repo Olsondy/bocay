@@ -166,7 +166,7 @@ create table sys_dept
     phone         varchar(11)  default NULL::character varying,
     email         varchar(50)  default NULL::character varying,
     status        char         default '1'::bpchar,
-    is_deleted    char         default '1'::bpchar,
+    is_deleted    char         default '0'::bpchar,
     create_dept   bigint,
     create_by     bigint,
     create_time   timestamp,
@@ -198,7 +198,7 @@ comment on column sys_dept.email is '邮箱';
 
 comment on column sys_dept.status is '部门状态（0停用 1正常）';
 
-comment on column sys_dept.is_deleted is '删除标志（0删除 1存在）';
+comment on column sys_dept.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column sys_dept.create_dept is '创建部门';
 
@@ -419,7 +419,7 @@ comment on column sys_role.dept_check_strictly is '部门树选择项是否关�
 
 comment on column sys_role.status is '角色状态（0停用 1正常）';
 
-comment on column sys_role.is_deleted is '删除标志（0删除 1存在）';
+comment on column sys_role.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column sys_role.create_dept is '创建部门';
 
@@ -514,7 +514,7 @@ comment on column sys_tenant.account_count is '用户数量（-1不限制）';
 
 comment on column sys_tenant.status is '租户状态（0停用 1删除）';
 
-comment on column sys_tenant.is_deleted is '删除标志（0删除 1存在）';
+comment on column sys_tenant.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column sys_tenant.create_dept is '创建部门';
 
@@ -557,7 +557,7 @@ comment on column sys_tenant_package.remark is '备注';
 
 comment on column sys_tenant_package.status is '状态（0停用 1删除）';
 
-comment on column sys_tenant_package.is_deleted is '删除标志（0删除 1存在）';
+comment on column sys_tenant_package.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column sys_tenant_package.create_dept is '创建部门';
 
@@ -624,7 +624,7 @@ comment on column sys_user.password is '密码';
 
 comment on column sys_user.status is '帐号状态（0停用 1删除）';
 
-comment on column sys_user.is_deleted is '删除标志（0删除 1存在）';
+comment on column sys_user.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column sys_user.login_ip is '最后登陆IP';
 

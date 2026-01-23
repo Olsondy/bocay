@@ -4,7 +4,7 @@ create table t_temp
         constraint t_temp_pk
             primary key,
     status      char default '1'::bpchar,
-    is_deleted  char default '1'::bpchar,
+    is_deleted  char default '0'::bpchar,
     create_dept bigint,
     create_by   bigint,
     create_time timestamp,
@@ -18,7 +18,7 @@ comment on column public.t_temp.id is '主键';
 
 comment on column public.t_temp.status is '状态（0停用 1正常）';
 
-comment on column public.t_temp.is_deleted is '删除标志（0删除 1存在）';
+comment on column public.t_temp.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column public.t_temp.create_dept is '创建部门';
 
@@ -72,7 +72,7 @@ comment on column base_client.timeout is 'token固定超时';
 
 comment on column base_client.status is '状态（0停用 1正常）';
 
-comment on column base_client.is_deleted is '删除标志（0删除 1存在）';
+comment on column base_client.is_deleted is '删除标志（0未删除 1已删除）';
 
 comment on column base_client.create_dept is '创建部门';
 
@@ -560,4 +560,4 @@ comment on column base_social.update_by is '更新者';
 
 comment on column base_social.update_time is '更新时间';
 
-comment on column base_social.is_deleted is '删除标志（0删除 1存在）';
+comment on column base_social.is_deleted is '删除标志（0未删除 1已删除）';
