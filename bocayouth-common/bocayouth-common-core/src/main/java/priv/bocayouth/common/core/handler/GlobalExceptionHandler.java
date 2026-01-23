@@ -1,5 +1,6 @@
 package priv.bocayouth.common.core.handler;
 
+import cn.dev33.satoken.exception.NotLoginException;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpStatus;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -200,6 +201,15 @@ public class GlobalExceptionHandler {
     public R<Void> handleHttpMessageNotReadableException(HttpMessageNotReadableException e, HttpServletRequest request) {
         log.error("请求地址'{}', 参数解析失败: {}", request.getRequestURI(), e.getMessage());
         return R.fail(HttpStatus.HTTP_BAD_REQUEST, "请求参数格式错误：" + e.getMostSpecificCause().getMessage());
+    }
+
+    /**
+     * 定义未登录异常返回
+     */
+    @ExceptionHandler(NotLoginException.class)
+    public R<Void> handleNotLoginException(HttpServletRequest request) {
+        log.error("请求地址'{}'", request.getRequestURI());
+        return R.fail("会话过期, 请重新登录");
     }
 
 }
