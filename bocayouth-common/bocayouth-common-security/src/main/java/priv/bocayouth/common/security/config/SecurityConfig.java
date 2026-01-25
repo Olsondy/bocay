@@ -17,12 +17,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import priv.bocayouth.common.core.constant.HttpStatus;
+import priv.bocayouth.common.core.helper.LoginHelper;
 import priv.bocayouth.common.core.utils.ServletUtils;
 import priv.bocayouth.common.core.utils.SpringUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 import priv.bocayouth.common.security.config.properties.SecurityProperties;
 import priv.bocayouth.common.security.handler.AllUrlHandler;
-import priv.bocayouth.common.core.helper.LoginHelper;
 
 /**
  * 权限安全配置
@@ -52,6 +52,7 @@ public class SecurityConfig implements WebMvcConfigurer {
                 SaRouter
                     // 获取所有的
                     .match(allUrlHandler.getUrls())
+                    .notMatch("/app/**")
                     // 对未排除的路径进行检查
                     .check(() -> {
                         HttpServletRequest request = ServletUtils.getRequest();
@@ -79,7 +80,8 @@ public class SecurityConfig implements WebMvcConfigurer {
             })).addPathPatterns("/**")
             // 排除不需要拦截的路径
             .excludePathPatterns(securityProperties.getExcludes())
-            .excludePathPatterns(ssePath);
+            .excludePathPatterns(ssePath)
+            .excludePathPatterns("/app/**");
     }
 
     /**
@@ -96,5 +98,4 @@ public class SecurityConfig implements WebMvcConfigurer {
             })
             .setError(e -> SaResult.error(e.getMessage()).setCode(HttpStatus.UNAUTHORIZED));
     }
-
 }

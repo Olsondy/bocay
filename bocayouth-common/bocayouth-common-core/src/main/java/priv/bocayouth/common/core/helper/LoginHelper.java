@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import priv.bocayouth.common.core.constant.SystemConstants;
 import priv.bocayouth.common.core.constant.TenantConstants;
 import priv.bocayouth.common.core.domain.model.LoginUser;
+import priv.bocayouth.common.core.domain.model.MobileLoginUser;
 import priv.bocayouth.common.core.enums.UserType;
 
 import java.util.Set;
@@ -40,6 +41,30 @@ public class LoginHelper {
     public static final String DEPT_CATEGORY_KEY = "deptCategory";
     public static final String CLIENT_KEY = "clientid";
 
+
+    public static final String MOBILE_LOGIN_USER_KEY = "mobileLoginUser";
+    public static final String IDENTITY_TYPE = "identityType";
+    public static final String IDENTITY_VALUE = "identityValue";
+    public static final String MOBILE_PLATFORM = "mobilePlatform";
+    public static final String SESSION_KEY = "sessionKey";
+
+    /**
+     * 移动端登录
+     *
+     * @param mobileUser 登录用户的信息
+     * @param model     配置参数
+     */
+    public static void mobileLogin(MobileLoginUser mobileUser, SaLoginParameter model) {
+        model = ObjectUtil.defaultIfNull(model, new SaLoginParameter());
+        StpUtil.login(mobileUser.getUserId(), model.setExtra(USER_KEY, mobileUser.getUserId())
+                        .setExtra(IDENTITY_TYPE, mobileUser.getIdentityType())
+                        .setExtra(IDENTITY_VALUE, mobileUser.getIdentityValue())
+                        .setExtra(MOBILE_PLATFORM, mobileUser.getPlatform())
+                        .setExtra(SESSION_KEY, mobileUser.getSessionKey())
+                        .setExtra(CLIENT_KEY, mobileUser.getClientId()));
+        StpUtil.getTokenSession().set(MOBILE_LOGIN_USER_KEY, mobileUser);
+    }
+
     /**
      * 登录系统 基于 设备类型
      * 针对相同用户体系不同设备
@@ -58,6 +83,18 @@ public class LoginHelper {
                 .setExtra(DEPT_CATEGORY_KEY, loginUser.getDeptCategory())
         );
         StpUtil.getTokenSession().set(LOGIN_USER_KEY, loginUser);
+    }
+
+    /**
+     * 获取移动端用户(多级缓存)
+     */
+    @SuppressWarnings("unchecked cast")
+    public static <T extends MobileLoginUser> T getMobileLoginUser() {
+        SaSession session = StpUtil.getTokenSession();
+        if (ObjectUtil.isNull(session)) {
+            return null;
+        }
+        return (T) session.get(MOBILE_LOGIN_USER_KEY);
     }
 
     /**

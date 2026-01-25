@@ -8,6 +8,14 @@ package priv.bocayouth.common.core.constant;
 public interface SystemConstants {
 
     /**
+     * 未删除
+     */
+    String ACTIVE = "0";
+    /**
+     * 已删除
+     */
+    String INACTIVE = "1";
+    /**
      * 正常状态
      */
     String NORMAL = "1";

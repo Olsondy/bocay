@@ -75,7 +75,7 @@ public class SysRoleServiceImpl implements ISysRoleService, RoleService {
     private Wrapper<SysRole> buildQueryWrapper(SysRoleBo bo) {
         Map<String, Object> params = bo.getParams();
         QueryWrapper<SysRole> wrapper = Wrappers.query();
-        wrapper.eq("r.is_deleted", "0")
+        wrapper.eq("r.is_deleted", SystemConstants.ACTIVE)
             .eq(ObjectUtil.isNotNull(bo.getRoleId()), "r.role_id", bo.getRoleId())
             .like(StringUtils.isNotBlank(bo.getRoleName()), "r.role_name", bo.getRoleName())
             .eq(StringUtils.isNotBlank(bo.getStatus()), "r.status", bo.getStatus())
