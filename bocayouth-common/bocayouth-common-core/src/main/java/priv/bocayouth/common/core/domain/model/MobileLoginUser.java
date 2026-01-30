@@ -26,6 +26,10 @@ public class MobileLoginUser implements Serializable {
      * 用户昵称
      */
     private String nickname;
+    /**
+     * 用户手机号
+     */
+    private String phoneNumber;
 
     /**
      * 全局id
