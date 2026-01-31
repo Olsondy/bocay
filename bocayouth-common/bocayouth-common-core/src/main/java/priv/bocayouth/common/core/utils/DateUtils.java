@@ -1,5 +1,7 @@
 package priv.bocayouth.common.core.utils;
 
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
 import org.apache.commons.lang3.time.DateFormatUtils;
 import priv.bocayouth.common.core.enums.FormatsType;
 import priv.bocayouth.common.core.exception.ServiceException;
@@ -297,4 +299,21 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         }
     }
 
+    /**
+     * 格式化时间标签显示文本
+     * @param eventTime
+     * @return
+     */
+    public static String formatTimeLabel(Date eventTime) {
+        long between = DateUtil.between(eventTime, new Date(), DateUnit.MINUTE);
+
+        if (between < 1)           return "刚刚";
+        if (between < 60)          return between + "分钟前";
+        if (between < 60 * 24)     return between / 60 + "小时前";
+
+        long days = between / (60 * 24);
+        if (days < 3)  return days + "天前";
+        if (days < 7)  return "3天前";
+        return "7天前";
+    }
 }
