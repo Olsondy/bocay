@@ -1,7 +1,7 @@
 package priv.bocayouth.base.domain.bo;
 
+import priv.bocayouth.common.base.domain.SysOperLog;
 import priv.bocayouth.common.core.feat.log.OperLogEvent;
-import priv.bocayouth.base.domain.SysOperLog;
 import io.github.linpeilie.annotations.AutoMapper;
 import io.github.linpeilie.annotations.AutoMappers;
 import lombok.Data;

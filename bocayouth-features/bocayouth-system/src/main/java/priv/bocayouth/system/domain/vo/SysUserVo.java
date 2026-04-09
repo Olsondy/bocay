@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
 import priv.bocayouth.common.core.annotation.Sensitive;
-import priv.bocayouth.common.base.annotation.Conversion;
-import priv.bocayouth.common.base.constant.ConversionConstant;
+import priv.bocayouth.common.conversion.annotation.Conversion;
+import priv.bocayouth.common.conversion.constant.ConversionConstant;
 import priv.bocayouth.common.core.enums.SensitiveStrategy;
 import priv.bocayouth.system.domain.SysUser;
 

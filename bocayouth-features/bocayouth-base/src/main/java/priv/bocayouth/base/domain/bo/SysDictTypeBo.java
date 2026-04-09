@@ -6,9 +6,9 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import priv.bocayouth.common.base.domain.SysDictType;
 import priv.bocayouth.common.core.constant.RegexConstants;
 import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
-import priv.bocayouth.base.domain.SysDictType;
 
 /**
  * 字典类型业务对象 sys_dict_type

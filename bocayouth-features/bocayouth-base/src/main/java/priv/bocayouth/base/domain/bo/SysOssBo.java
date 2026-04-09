@@ -1,7 +1,7 @@
 package priv.bocayouth.base.domain.bo;
 
+import priv.bocayouth.common.base.domain.SysOss;
 import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
-import priv.bocayouth.base.domain.SysOss;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

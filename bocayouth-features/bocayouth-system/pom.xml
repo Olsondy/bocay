@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-base</artifactId>
+            <artifactId>bocayouth-common-conversion</artifactId>
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>

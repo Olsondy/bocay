@@ -1,9 +1,9 @@
 package priv.bocayouth.base.domain.bo;
 
+import priv.bocayouth.common.base.domain.SysOssConfig;
 import priv.bocayouth.common.core.validate.AddGroup;
 import priv.bocayouth.common.core.validate.EditGroup;
 import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
-import priv.bocayouth.base.domain.SysOssConfig;
 import io.github.linpeilie.annotations.AutoMapper;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

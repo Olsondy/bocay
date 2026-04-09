@@ -1,9 +1,9 @@
 package priv.bocayouth.base.domain.vo;
 
 import cn.idev.excel.annotation.ExcelIgnoreUnannotated;
-import priv.bocayouth.base.domain.SysOssConfig;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
+import priv.bocayouth.common.base.domain.SysOssConfig;
 
 import java.io.Serial;
 import java.io.Serializable;

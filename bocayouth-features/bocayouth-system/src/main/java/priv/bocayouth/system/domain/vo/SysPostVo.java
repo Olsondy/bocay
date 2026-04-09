@@ -7,8 +7,8 @@ import lombok.Data;
 import priv.bocayouth.system.domain.SysPost;
 import priv.bocayouth.common.excel.annotation.ExcelDictFormat;
 import priv.bocayouth.common.excel.convert.ExcelDictConvert;
-import priv.bocayouth.common.base.annotation.Conversion;
-import priv.bocayouth.common.base.constant.ConversionConstant;
+import priv.bocayouth.common.conversion.annotation.Conversion;
+import priv.bocayouth.common.conversion.constant.ConversionConstant;
 
 import java.io.Serial;
 import java.io.Serializable;

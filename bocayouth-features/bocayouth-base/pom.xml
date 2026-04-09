@@ -17,10 +17,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
+    <dependencies> <dependency>
+        <groupId>priv.bocayouth</groupId>
+        <artifactId>bocayouth-common-base</artifactId>
+    </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>
-            <artifactId>bocayouth-common-base</artifactId>
+            <artifactId>bocayouth-common-conversion</artifactId>
         </dependency>
         <dependency>
             <groupId>priv.bocayouth</groupId>

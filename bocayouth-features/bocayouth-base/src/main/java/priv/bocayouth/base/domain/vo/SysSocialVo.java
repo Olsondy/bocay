@@ -2,7 +2,7 @@ package priv.bocayouth.base.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
-import priv.bocayouth.base.domain.SysSocial;
+import priv.bocayouth.common.base.domain.SysSocial;
 
 import java.io.Serial;
 import java.io.Serializable;

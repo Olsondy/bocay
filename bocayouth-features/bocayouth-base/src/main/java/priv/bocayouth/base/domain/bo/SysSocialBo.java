@@ -6,10 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import priv.bocayouth.base.domain.SysSocial;
+import priv.bocayouth.common.base.domain.SysSocial;
 import priv.bocayouth.common.core.validate.AddGroup;
 import priv.bocayouth.common.core.validate.EditGroup;
-import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
+import priv.bocayouth.common.core.domain.entity.TenantEntity;
 
 /**
  * 社会化关系业务对象 sys_social

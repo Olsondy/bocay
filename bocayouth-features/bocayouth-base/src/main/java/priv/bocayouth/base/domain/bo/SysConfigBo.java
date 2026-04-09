@@ -5,8 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import priv.bocayouth.common.base.domain.SysConfig;
 import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
-import priv.bocayouth.base.domain.SysConfig;
 
 /**
  * 参数配置业务对象 sys_config

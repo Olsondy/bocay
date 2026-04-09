@@ -2,8 +2,8 @@ package priv.bocayouth.system.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
-import priv.bocayouth.common.base.annotation.Conversion;
-import priv.bocayouth.common.base.constant.ConversionConstant;
+import priv.bocayouth.common.conversion.annotation.Conversion;
+import priv.bocayouth.common.conversion.constant.ConversionConstant;
 import priv.bocayouth.system.domain.SysNotice;
 
 import java.io.Serial;

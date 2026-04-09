@@ -1,8 +1,8 @@
 package priv.bocayouth.base.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import priv.bocayouth.common.base.domain.SysDictData;
 import priv.bocayouth.common.core.feat.mybaits.BaseMapperPlus;
-import priv.bocayouth.base.domain.SysDictData;
 import priv.bocayouth.base.domain.vo.SysDictDataVo;
 
 import java.util.List;

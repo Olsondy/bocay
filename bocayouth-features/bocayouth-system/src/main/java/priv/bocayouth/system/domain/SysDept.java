@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
+import priv.bocayouth.common.core.domain.entity.TenantEntity;
 
 import java.io.Serial;
 import java.util.ArrayList;

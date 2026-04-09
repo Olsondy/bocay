@@ -4,7 +4,7 @@ import cn.idev.excel.annotation.ExcelIgnoreUnannotated;
 import cn.idev.excel.annotation.ExcelProperty;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
-import priv.bocayouth.base.domain.SysLogininfor;
+import priv.bocayouth.common.base.domain.SysLogininfor;
 import priv.bocayouth.common.excel.annotation.ExcelDictFormat;
 import priv.bocayouth.common.excel.convert.ExcelDictConvert;
 

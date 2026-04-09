@@ -4,11 +4,11 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import priv.bocayouth.base.domain.SysSocial;
 import priv.bocayouth.base.domain.bo.SysSocialBo;
 import priv.bocayouth.base.domain.vo.SysSocialVo;
 import priv.bocayouth.base.mapper.SysSocialMapper;
 import priv.bocayouth.base.service.ISysSocialService;
+import priv.bocayouth.common.base.domain.SysSocial;
 import priv.bocayouth.common.core.utils.MapstructUtils;
 import priv.bocayouth.common.core.utils.StringUtils;
 

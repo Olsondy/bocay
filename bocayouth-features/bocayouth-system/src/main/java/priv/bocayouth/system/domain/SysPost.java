@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
+import priv.bocayouth.common.core.domain.entity.TenantEntity;
 
 /**
  * 岗位表 sys_post

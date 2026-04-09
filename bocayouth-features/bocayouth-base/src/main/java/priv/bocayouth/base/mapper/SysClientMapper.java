@@ -1,7 +1,7 @@
 package priv.bocayouth.base.mapper;
 
-import priv.bocayouth.base.domain.SysClient;
 import priv.bocayouth.base.domain.vo.SysClientVo;
+import priv.bocayouth.common.base.domain.SysClient;
 import priv.bocayouth.common.core.feat.mybaits.BaseMapperPlus;
 
 /**

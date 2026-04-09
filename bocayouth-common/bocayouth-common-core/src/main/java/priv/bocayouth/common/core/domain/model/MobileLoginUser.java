@@ -56,9 +56,9 @@ public class MobileLoginUser implements Serializable {
     private String platform;
 
     /**
-     * 客户端id
+     * 客户端
      */
-    private String clientId;
+    private String clientKey;
 
     /**
      * 设备类型

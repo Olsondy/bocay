@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import priv.bocayouth.common.tenant.domain.entity.TenantEntity;
+import priv.bocayouth.common.core.domain.entity.TenantEntity;
 
 /**
  * 角色表 sys_role

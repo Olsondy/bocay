@@ -1,0 +1,6 @@
+priv.bocayouth.common.conversion.config.ConversionConfig
+priv.bocayouth.common.conversion.feat.service.impl.DeptNameConversionImpl
+priv.bocayouth.common.conversion.feat.service.impl.DictTypeConversionImpl
+priv.bocayouth.common.conversion.feat.service.impl.NicknameConversionImpl
+priv.bocayouth.common.conversion.feat.service.impl.OssUrlConversionImpl
+priv.bocayouth.common.conversion.feat.service.impl.UserNameConversionImpl

@@ -1,6 +1,6 @@
 package priv.bocayouth.base.domain.bo;
 
-import priv.bocayouth.base.domain.SysClient;
+import priv.bocayouth.common.base.domain.SysClient;
 import priv.bocayouth.common.core.feat.mybaits.BaseEntity;
 import priv.bocayouth.common.core.validate.AddGroup;
 import priv.bocayouth.common.core.validate.EditGroup;

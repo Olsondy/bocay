@@ -1,8 +1,8 @@
 package priv.bocayouth.base.domain.bo;
 
-import priv.bocayouth.base.domain.SysLogininfor;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
+import priv.bocayouth.common.base.domain.SysLogininfor;
 
 import java.util.Date;
 import java.util.HashMap;

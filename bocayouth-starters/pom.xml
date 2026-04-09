@@ -18,8 +18,13 @@
         <dependencies>
             <!-- 核心模块 -->
             <dependency>
+            <groupId>priv.bocayouth</groupId>
+            <artifactId>bocayouth-common-base</artifactId>
+            <version>${revision}</version>
+            </dependency>
+            <dependency>
                 <groupId>priv.bocayouth</groupId>
-                <artifactId>bocayouth-common-base</artifactId>
+                <artifactId>bocayouth-common-conversion</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
@@ -35,11 +40,6 @@
             <dependency>
                 <groupId>priv.bocayouth</groupId>
                 <artifactId>bocayouth-common-infra</artifactId>
-                <version>${revision}</version>
-            </dependency>
-            <dependency>
-                <groupId>priv.bocayouth</groupId>
-                <artifactId>bocayouth-common-mobile</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>

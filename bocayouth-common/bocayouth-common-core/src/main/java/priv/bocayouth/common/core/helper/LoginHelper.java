@@ -56,12 +56,12 @@ public class LoginHelper {
      */
     public static void mobileLogin(MobileLoginUser mobileUser, SaLoginParameter model) {
         model = ObjectUtil.defaultIfNull(model, new SaLoginParameter());
-        StpUtil.login(mobileUser.getUserId(), model.setExtra(USER_KEY, mobileUser.getUserId())
+        StpUtil.login(mobileUser.getUserId(),
+                model.setExtra(USER_KEY, mobileUser.getUserId())
+                        .setExtra(SESSION_KEY, mobileUser.getSessionKey())
                         .setExtra(IDENTITY_TYPE, mobileUser.getIdentityType())
                         .setExtra(IDENTITY_VALUE, mobileUser.getIdentityValue())
-                        .setExtra(MOBILE_PLATFORM, mobileUser.getPlatform())
-                        .setExtra(SESSION_KEY, mobileUser.getSessionKey())
-                        .setExtra(CLIENT_KEY, mobileUser.getClientId()));
+                        .setExtra(MOBILE_PLATFORM, mobileUser.getPlatform()));
         StpUtil.getTokenSession().set(MOBILE_LOGIN_USER_KEY, mobileUser);
     }
 
